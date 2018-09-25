@@ -30,7 +30,7 @@
     "debug": "^3.1.0",
     "events": "^3.0.0",
     "sdp-transform": "^2.4.1",
-    "webrtc-adapter": "^6.3.2"
+    "webrtc-adapter": "file:./webrtc-adapter"
   },
   "devDependencies": {
     "ansi-colors": "^3.0.5",
