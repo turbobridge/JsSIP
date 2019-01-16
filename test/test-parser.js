@@ -87,6 +87,19 @@ module.exports = {
     test.done();
   },
 
+  'parse NameAddr with token display_name' : function(test)
+  {
+    const data = 'Foo    Foo Bar\tBaz<SIP:%61liCE@versaTICA.Com:6060;TRansport=TCp;Foo=ABc;baz?X-Header-1=AaA1&X-Header-2=BbB&x-header-1=AAA2>;QWE=QWE;ASd';
+
+    const name = JsSIP.NameAddrHeader.parse(data);
+
+    // Parsed data.
+    test.ok(name instanceof(JsSIP.NameAddrHeader));
+    test.strictEqual(name.display_name, 'Foo Foo Bar Baz');
+
+    test.done();
+  },
+
   'parse multiple Contact' : function(test)
   {
     const data = '"Iñaki @ł€" <SIP:+1234@ALIAX.net;Transport=WS>;+sip.Instance="abCD", sip:bob@biloxi.COM;headerParam, <sip:DOMAIN.com:5>';
